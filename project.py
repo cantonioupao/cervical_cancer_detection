@@ -10,7 +10,8 @@ import matplolib.pyplot as plt
 
 
 
-URL = #link of the dataset
+URL = https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8451588&tag=1     
+URL_description = http://www.cs.uoi.gr/~marina/SIPAKMED/Description_of_Features.pdf #link of the dataset
 pathZIP= tf.keras.utils.get_file("cervicalcancer.zip", origin= URL, extract = True)
 dataset_directory = os.path.join(os.path.dirname(pathZIP))  #create the path of the main dataset directory
 train_dir= os.path.join(dataset_directory,  "train") #create another directory but dont create the folder
