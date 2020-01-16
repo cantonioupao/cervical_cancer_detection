@@ -59,9 +59,10 @@ The model will be trained on the Sipakmed which is a new Dataset for Feature and
 
 The main procedure for training a Resnet50 model on the Sipakmed dataset is described above. Nevertheless for improving results usually further training is requierd and hence the methods of data augmentation, triple transfer learning and feature combinations are used and described below.
 
-****************************************************Data Augmentation*******************************************************************
+**Data Augmentation
 
 1. For applying data augmentation to the sipakmed dataset, the "implementation_DataAugmentation_Extension.py" file is executed. Specify in the file the target directory path of the sipakmed dataset (or any other dataset you want to apply data augmentation). set the path of the directory through the variable ---> "target_directory"
 
 
-*In general all python files are detailed with many descriptive and helpful comments that will guide you to any step described in the above procedures.
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15`
+-In general all python files are detailed with many descriptive and helpful comments that will guide you to any step described in the above procedures.
