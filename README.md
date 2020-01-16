@@ -65,4 +65,4 @@ The main procedure for training a Resnet50 model on the Sipakmed dataset is desc
 
 
 - ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15`
--In general all python files are detailed with many descriptive and helpful comments that will guide you to any step described in the above procedures.
+`#f03c15In general all python files are detailed with many descriptive and helpful comments that will guide you to any step described in the above procedures.'
