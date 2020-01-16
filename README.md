@@ -11,7 +11,7 @@ A deep learning framework for cervical cancer classification to allow improved a
 As part of an ETH project a deep learning framework is developed for cervical cancer detection and classification based on microscopics images of cells from PAP smear results. The purpose of this project is to provide another tool for doctors to rapidly detect if a patient has developed or is in danger of developing cervical cancer.It consitutes a rapid tool for detection and prognosis of cervical cancer for female patients. 
 
 ### Dataset
-The model will be trained on the Sipakmed which is a new Dataset for Feature and Image Based Classification of Normal and Pathological Cervical Cells in Pap Smear Images (https://www.researchgate.net/figure/The-boundaries-of-the-cytoplasm-and-the-nucleus-of-each-cell-in-images-of-cell-clusters_fig1_327995161). The dataset can be downloaded using the following link: http://www.cs.uoi.gr/~marina/sipakmed.html
+The model will be trained on the [Sipakmed](https://www.researchgate.net/figure/The-boundaries-of-the-cytoplasm-and-the-nucleus-of-each-cell-in-images-of-cell-clusters_fig1_327995161) which is a new Dataset for Feature and Image Based Classification of Normal and Pathological Cervical Cells in Pap Smear Images . The dataset can be downloaded [here](http://www.cs.uoi.gr/~marina/sipakmed.html)
 
 
 ### Procedure
@@ -63,8 +63,12 @@ The main procedure for training a Resnet50 model on the Sipakmed dataset is desc
 
 1. For applying data augmentation to the sipakmed dataset, the "implementation_DataAugmentation_Extension.py" file is executed. Specify in the file the target directory path of the sipakmed dataset (or any other dataset you want to apply data augmentation). set the path of the directory through the variable ---> "target_directory"
 
+2.After executing the file, 14 new augmented images will be generated for each image of the Sipakmed dataset. The data augmentations carried out include affine transformations,filter response, color channels tweaking and etc.The generated images are saved automatically in the same location with the original image.
+
+**Triple Transfer Learning
+
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) 
-In general all python files are detailed with many descriptive and helpful comments that will guide you to any step described in the above procedures  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) 
+**In general all python files are detailed with many descriptive and helpful comments that will guide you to any step described in the above procedures**  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) 
  
 
