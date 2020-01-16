@@ -41,22 +41,27 @@ The model will be trained on the Sipakmed which is a new Dataset for Feature and
   │   └── im_Superficial-Intermediate
   └── models
   ```
-                  
-3.Use the "implementation_DatasetDivision.py" to reform the sipakmed dataset structure to the desired dataset structure, with training_size = 0.6, validation_size=0.2 and testing_size=0.2
 
-4.Install the fastai library and all its dependencies, as well as the torch library.
 
-5.To train the Resnet50 pretrained network on the Sipakmed dataset use the "R50.py". Initially specificy in the file, the path to the sipakmed (Formatted) dataset. Then choose appropriate hyperparameters (Epoch = 50 , Batch = 10 , Learning rate = 0.001) and start training.
+2.Use the "implementation_DatasetDivision.py" to reform the sipakmed dataset structure to the desired dataset structure, with training_size = 0.6, validation_size=0.2 and testing_size=0.2
 
-6.After training is completed the model weights are saved and the whole model is exported.You can specify beforehand in the "R50.py", the path to the storage location to which you want the model weights(.pth) and the whole model(.pkl) to be saved
+3.Install the fastai library and all its dependencies, as well as the torch library.
 
-7.In case you have trained your model up to a certain checkpoint and you save it, you can reload the model weigths by specifying path to the model weights file(.pth)  ---> "model_path" variable in "R50.py"
+4.To train the Resnet50 pretrained network on the Sipakmed dataset use the "R50.py". Initially specificy in the file, the path to the sipakmed (Formatted) dataset. Then choose appropriate hyperparameters (Epoch = 50 , Batch = 10 , Learning rate = 0.001) and start training.
 
-8.After completing a simple training of the Sipakmed (Formatted) dataset, the results can be further analyzed with the aid of an inference file "Inference_FastAI.py". The inference file will load the model pickle file (.pkl) and will perform classification on any given dataset. It will predict any sample cell microscopic image. The inference file, is set up to evaluate the performance of the model on the testing dataset from the Sipakmed. However it can be carried out on any set of images or single image.The user needs to specify the "test_dataset_path" and the "model_path" with paths to where the testset and the model file are respectively. The inference file will output the accuracy, recall,precision values and the confusion matrix for the various cell categories.
+5.After training is completed the model weights are saved and the whole model is exported.You can specify beforehand in the "R50.py", the path to the storage location to which you want the model weights(.pth) and the whole model(.pkl) to be saved
+
+6.In case you have trained your model up to a certain checkpoint and you save it, you can reload the model weigths by specifying path to the model weights file(.pth)  ---> "model_path" variable in "R50.py"
+
+7.After completing a simple training of the Sipakmed (Formatted) dataset, the results can be further analyzed with the aid of an inference file "Inference_FastAI.py". The inference file will load the model pickle file (.pkl) and will perform classification on any given dataset. It will predict any sample cell microscopic image. The inference file, is set up to evaluate the performance of the model on the testing dataset from the Sipakmed. However it can be carried out on any set of images or single image.The user needs to specify the "test_dataset_path" and the "model_path" with paths to where the testset and the model file are respectively. The inference file will output the accuracy, recall,precision values and the confusion matrix for the various cell categories.
 
 ## Further training
 
 The main procedure for training a Resnet50 model on the Sipakmed dataset is described above. Nevertheless for improving results usually further training is requierd and hence the methods of data augmentation, triple transfer learning and feature combinations are used and described below.
 
+****************************************************Data Augmentation*******************************************************************
+
+1. For applying data augmentation to the sipakmed dataset, the "implementation_DataAugmentation_Extension.py" file is executed. Specify in the file the target directory path of the sipakmed dataset (or any other dataset you want to apply data augmentation). set the path of the directory through the variable ---> "target_directory"
 
 
+*In general all python files are detailed with many descriptive and helpful comments that will guide you to any step described in the above procedures.
