@@ -3,7 +3,7 @@
 A deep learning framework for cervical cancer classification to allow improved accuracy for PAP smear test 
 <table style="border:0px">
    <tr>
-       <td><img src="official_collage.png" frame=void rules=none></td>
+       <td><img src="official collage.png" frame=void rules=none></td>
    </tr>
 </table>
 
