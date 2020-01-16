@@ -1,6 +1,11 @@
 # Cervical Cancer Detection from PAP-Test(smear) results using DL
 ### Overview 
 A deep learning framework for cervical cancer classification to allow improved accuracy for PAP smear test 
+<table style="border:0px">
+   <tr>
+       <td><img src="official_collage.png" frame=void rules=none></td>
+   </tr>
+</table>
 
 ### Brief Summary
 As part of an ETH project a deep learning framework is developed for cervical cancer detection and classification based on microscopics images of cells from PAP smear results. The purpose of this project is to provide another tool for doctors to rapidly detect if a patient has developed or is in danger of developing cervical cancer.It consitutes a rapid tool for detection and prognosis of cervical cancer for female patients. 
