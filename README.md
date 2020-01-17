@@ -17,8 +17,7 @@ a) Dyskeratotic
 b) Koilocytotic
 c) Metaplastic
 d) Parabasal
-e) Superficial-Intermediate
-As a result, this project focuses on a 5 classes categorical classification based on whole slide microscopic cell images (not just cropped cell images, but whole slided)
+e) Superficial-Intermediate. As a result, this project focuses on a 5 classes categorical classification based on whole slide microscopic cell images (not just cropped cell images, but whole slided)
 
 
 ### Procedure
@@ -81,7 +80,7 @@ c) Columnar Epithelial
 d) Mild Dysplasia 
 e) Moderate Dysplasia
 f) Severe Dysplasia
-g) Carcinoma in Situ
+g) Carcinoma in Situ,
 consisting of 916 images of single cells. Because there are more classes to be classified in the Herlev dataset, the output head(softmax layers) needs to be changed to 7 outputs. This is done automatically in the "R50Herlev.py". The weights after training the on the Herlev are saved and again retrieved again in preparation for training on the Sipakmed dataset. Hence the weights are loaded to the model and the 3rd training is carried out on the Sipakmed dataset and the final model is saved(.pth) and exported(.pkl). The procedure to carry out TTL is described below:
 
 1. Download the Herlev dataset [here](http://mde-lab.aegean.gr/images/stories/docs/smear2005.zip)
