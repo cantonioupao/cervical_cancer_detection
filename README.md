@@ -3,7 +3,7 @@
 A Deep learning framework for cervical cancer classification on the Sipakmed dataset, to allow improved accuracy for PAP smear test evaluation and cancer prognosis 
 <table style="border:0px">
    <tr>
-       <td><img src="official collage.png" frame=void rules=none></td>
+       <td><img src="pics/official collage.png" frame=void rules=none></td>
    </tr>
 </table>
 
@@ -58,7 +58,7 @@ e) Superficial-Intermediate. As a result, this project focuses on a 5 classes ca
 
 7. After completing a simple training of the Sipakmed (Formatted) dataset, the results can be further analyzed with the aid of an inference file "Inference_FastAI.py". The inference file will load the model pickle file (.pkl) and will perform classification on any given dataset. It will predict any sample cell microscopic image. The inference file, is set up to evaluate the performance of the model on the testing dataset from the Sipakmed. However it can be carried out on any set of images or single image.The user needs to specify the "test_dataset_path" and the "model_path" with paths to where the testset and the model file are respectively. The following screenshot shows the output from an inference file.<table style="border:0px">
    <tr>
-       <td><img src="screenshotTTLinference.jpg" frame=void rules=none></td>
+       <td><img src="pics/screenshotTTLinference.jpg" frame=void rules=none></td>
    </tr>
 </table>The inference file will output the accuracy, recall,precision values and the confusion matrix for the various cell categories. The inference file can be implemented on the vallidation set as well, by changing "test_dataset_path = path_folder/'test'" to test_dataset_path = path_folder/'val'  
 
@@ -110,7 +110,7 @@ In contrast to the previously mentioned approaches, the following models were co
 
 4. Finally, the features extracted features from models M1("Intermediated Layer Classification based on R50") and M2("Intermediate Layer Classification based on VGG16") are combined into a new model and trained by exectuting the "K_REPORT_MAIN_COMB.py".The final model trained with "K_REPORT_MAIN_COMB.py" is depicted in the right corner of the figure below.<table style="border:0px">
    <tr>
-       <td><img src="FeatureCombination.jpg" frame=void rules=none></td>
+       <td><img src="pics/FeatureCombination.jpg" frame=void rules=none></td>
    </tr>
 </table>Executing "K_REPORT_MAIN_COMB.py" will output accuracy, confusion matrix and classwise precision and recall values for the final model. Selecting a good seed on line 105 based on validation performance, may be necessary to reach optimal performance.
 
@@ -120,8 +120,8 @@ In contrast to the previously mentioned approaches, the following models were co
 The model with the highest accuracy was obtained by implementing the TTL method. The best performing framework yielded outstanding results with very high accuracy,recall and precision vallues. The confusion matrix obtained with the aid of the inference file is shown below for inference on both the testing and validation set.
 <table style="border:0px">
    <tr>
-       <td><img src="ConfusionMatrixForTestingDatasetSipakmed.jpg" frame=void rules=none></td>
-       <td><img src="ConfusionMatrixForValidationDatasetSipakmed.jpg" frame=void rules=none></td>
+       <td><img src="pics/ConfusionMatrixForTestingDatasetSipakmed.jpg" frame=void rules=none></td>
+       <td><img src="pics/ConfusionMatrixForValidationDatasetSipakmed.jpg" frame=void rules=none></td>
    </tr>
 </table>
 
