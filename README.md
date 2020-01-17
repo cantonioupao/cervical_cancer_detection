@@ -49,7 +49,7 @@ As a result, this project focuses on a 5 classes categorical classification base
   │   └── im_Superficial-Intermediate
   └── models
   ```
-3. Install the fastai library and all its dependencies, as well as the torch library.
+3. Install the "fastai" library and all its dependencies, as well as the torch library(pytorch project).
 
 4. To train the Resnet50 pretrained network on the Sipakmed dataset use the "R50.py". Initially specificy in the file, the path to the sipakmed (Formatted) dataset---->"path_folder". Then choose appropriate hyperparameters (Epoch = 50 , Batch = 10 , Learning rate = 0.01) and start training.
 
@@ -99,6 +99,22 @@ consisting of 916 images of single cells. Because there are more classes to be c
 7. Execute the "R50Herlev.py" after setting appropriate hyperparameters. The final output model will saved under the path specified by "save_loc" variable in the "LoadWeights.py" file. Both files are needed to succesfully execute R50herlev.py" file
 
 8. After training is completed, the model is saved(.pth) and exported(.pkl).Once again the model can be loaded to the learner of the inference file for better interpration and analysis of the results. The inference file prints the accuracy, precision, recall values along with the confusion matrix for the 5 categories
+
+
+**Feature Combination**
+In contrast to the previously mentioned approaches, the following models were coded in Keras.Furthermore the the "sklearn" package for performance reports, and "numpy" for various purposes are required.All lbraries and packages need to be downloaded and installed in the system beforehand.For carrying out the feature combination method four files are required and need to be executed"K_REPORT_MODELS.py", "K_REPORT_MAIN_R50.py", "K_REPORT_MAIN_VGG.py", "K_REPORT_MAIN_COMB.py". In order to succesfully run the models and obtain the final predictions the following steps are required:
+1. Make sure that all 4 files are located in the same folder(directory)
+
+2. Specify the path to the Sipakmed(Formatted) dataset directory in all python files except ""K_REPORT_MODELS.py"
+
+3. Train the 'Intermediate Layer classification models' based on R50 and VGG16 respectively by running "K_REPORT_MAIN_R50.py" and "K_REPORT_MAIN_VGG.py" respectively. Both files will save the model weights post training as K_R50_T2.h5 and K_VGG_T2.h5 respectively, and output the model performances on the test set.
+
+4. Finally, the features extracted features from models M1("Intermediated Layer Classification based on R50") and M2("Intermediate Layer Classification based on VGG16") are combined into a new model and trained by exectuting the "K_REPORT_MAIN_COMB.py".The final model trained with "K_REPORT_MAIN_COMB.py" is depicted in the right corner of the figure below.<table style="border:0px">
+   <tr>
+       <td><img src="FeatureCombination.jpg" frame=void rules=none></td>
+   </tr>
+</table>Executing "K_REPORT_MAIN_COMB.py" will output accuracy, confusion matrix and classwise precision and recall values for the final model. Selecting a good seed on line 105 based on validation performance, may be necessary to reach optimal performance.
+
 
 
 ## Best framework
