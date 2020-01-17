@@ -23,6 +23,7 @@ As a result, this project focuses on a 5 classes categorical classification base
 
 ### Procedure
 1. Download the Sipakmed dataset
+
 2. The Sipakmed dataset structure needs to be similar to the structure below.Use the "implementation_DatasetDivision.py" to reform the sipakmed dataset structure to the desired dataset structure, with training_size = 0.6, validation_size=0.2 and testing_size=0.2:
 
 - **Sipakmed Dataset**
@@ -80,9 +81,13 @@ g) Carcinoma in Situ
 consisting of 916 images of single cells. Because there are more classes to be classified in the Herlev dataset, the output head(softmax layers) needs to be changed to 7 outputs. This is done automatically in the "R50Herlev.py". The weights after training the on the Herlev are saved and again retrieved again in preparation for training on the Sipakmed dataset. Hence the weights are loaded to the model and the 3rd training is carried out on the Sipakmed dataset and the final model is saved(.pth) and exported(.pkl). The procedure to carry out TTL is described below:
 
 1. Download the Herlev dataset [here](http://mde-lab.aegean.gr/images/stories/docs/smear2005.zip)
-2. Make sure that you have all 3 datasets in your main directory.The Extended DA, the Herlev and the Sipakmed(formatted) dataset.
+
+2. Make sure that you have all 3 datasets in your main directory.The Extended DA, the Herlev and the Sipakmed(formatted) dataset
+
 3. Only the 'R50Herlev.py file needs to be executed to succesfully complete the TTL
-4. The path of the model weights from training on the Extended DA dataset needs to be specified. Training on Extended DA and saving the weights is no different that training on the Sipakmed(Formatted). With the aid of "R50.py" the model is trained on the Extended DA. Remember that if you want to train on the Extended DA, just change the "path_folder" variable and specify the path to the Extnded DA this time. Then choose the location at which the model weights will be saved (after training on the Extended DA). Now the path to the weights's location you chose when training before, will be the path that needs to be specified in the "R50Herlev.py".
+
+4. The path of the model weights from training on the Extended DA dataset needs to be specified. Training on Extended DA and saving the weights is no different that training on the Sipakmed(Formatted). With the aid of "R50.py" the model is trained on the Extended DA. Remember that if you want to train on the Extended DA, just change the "path_folder" variable and specify the path to the Extnded DA this time. Then choose the location at which the model weights will be saved (after training on the Extended DA). Now the path to the weights's location you chose when training before, will be the path that needs to be specified in the "R50Herlev.py"
+
 5. Then just make sure that the number of output classes is set to 7 and 5 for the Herlev and Sipakmed respectively. The 
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) 
