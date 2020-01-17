@@ -48,15 +48,15 @@ e) Superficial-Intermediate. Overall, this project focuses on a 5 class categori
   │   └── im_Superficial-Intermediate
   └── models
   ```
-3. Install the "fastai" library and all its dependencies, as well as the torch library(pytorch project).
+3. Install the "fastai" library and all its dependencies, as well as the torch library(pytorch project)
 
-4. To train the ResNet50 pretrained network on the SiPakMed dataset use the "R50.py". Initially specificy in the file, the path to the SiPakMed (Formatted) dataset---->"path_folder". Then choose appropriate hyperparameters (Epoch = 50 , Batch = 10 , Learning rate = 0.01) and start training.
+4. To train the ResNet50 pretrained network on the SiPakMed dataset use the "R50.py". Initially specificy in the file, the path to the SiPakMed (Formatted) dataset---->"path_folder". Then choose appropriate hyperparameters (Epoch = 50 , Batch = 10 , Learning rate = 0.01) and start training
 
-5. After training is completed the model weights are saved and the whole model is exported.You can specify beforehand in the "R50.py", the path to the storage location to which you want the model weights(.pth) and the whole model(.pkl) to be saved
+5. After training is completed the model weights are saved and the whole model is exported. You can specify beforehand in the "R50.py", the path to the storage location to which you want the model weights(.pth) and the whole model(.pkl) to be saved
 
-6. In case you have trained your model up to a certain checkpoint and you save it, you can reload the model weigths by specifying path to the model weights file(.pth)  ---> "model_path" variable in "R50.py"
+6. In case you have trained your model up to a certain checkpoint and saved it, you can reload the model weigths by specifying the path to the model weights file(.pth)  ---> "model_path" variable in "R50.py"
 
-7. After completing a simple training of the SiPakMed (Formatted) dataset, the results can be further analyzed with the aid of an inference file "Inference_FastAI.py". The inference file will load the model pickle file (.pkl) and will perform classification on any given dataset. It will predict any sample cell microscopic image. The inference file, is set up to evaluate the performance of the model on the testing dataset from the SiPakMed. However it can be carried out on any set of images or single image.The user needs to specify the "test_dataset_path" and the "model_path" with paths to where the testset and the model file are respectively. The following screenshot shows the output from an inference file.<table style="border:0px">
+7. After completing a simple training on the SiPakMed (Formatted) dataset, the results can be further analyzed with the aid of an inference file "Inference_FastAI.py". The inference file will load the model pickle file (.pkl) and will perform classification on any given dataset. It will predict any sample microscopic cell image. The inference file, is set up to evaluate the performance of the model on the testing dataset from the SiPakMed. However it can be carried out on any set of images or single image.The user needs to specify the "test_dataset_path" and the "model_path" with paths to where the testset and the model file are respectively. The following screenshot shows the output from an inference file.<table style="border:0px">
    <tr>
        <td><img src="pics/screenshotTTLinference.jpg" frame=void rules=none></td>
    </tr>
@@ -70,7 +70,7 @@ The main procedure for training a ResNet50 model on the SiPakMed dataset is desc
 
 1. For applying data augmentation to the SiPakMed dataset, the "implementation_DataAugmentation_Extension.py" file is executed. Specify in the file the target directory path of the SiPakMed dataset (or any other dataset you want to apply data augmentation). set the path of the directory through the variable ---> "target_directory"
 
-2. After executing the file "implementation_DataAugmentation_Extension.py", 14 new augmented images will be generated for each image of the SiPakMed dataset. The data augmentations carried out include affine transformations,filter response, color channels tweaking and etc.The generated images are saved automatically in the same location with the original image. As a result the dataset size increases by a factor of 14, assisting with obtaining better results.
+2. After executing the file "implementation_DataAugmentation_Extension.py", 14 new augmented images will be generated for each image of the SiPakMed dataset. The data augmentations carried out include affine transformations,filter response, color channels tweaking and etc.The generated images are saved automatically in the same location with the original image. As a result the dataset size increases by a factor of 14, assisting with obtaining better results
 
 **Triple Transfer Learning**
 TTL(Trisple Transfer Learning) means that the mode was trained on the 3 datasets in total. Initially the model is trained on the Extended DA dataset, which is the formatted SiPakMed dataset after data augmentation has been carried out (procedure described in the above section). After training of the model is completed, the new weigths are saved in a .pth file. Afterwards the model is trained on the [Herlev dataset](https://www.researchgate.net/publication/326477913_Clustering_Techniques_on_Pap-smear_Images_for_the_Detection_of_Cervical_Cancer) which is a cervical cell dataset with 7 classification classes; 
@@ -93,7 +93,7 @@ consisting of 916 images of single cells. Because there are more classes to be c
 
 5. In the "R50Herlev.py" we need to specify the path to the directory of the Extended DA datset through "previous_model_DA_data_path". Also the path to the model weights (after training on the Extended DA) needs to be specified in the "previous_model_DA".FInally the path to the next dataset(that we will train on) needs to be specified in the "path_img" variable. It is suggested that is set to the Herlev dataset path -----> path_img = Path("path/to/smear2005Format")
 
-6. Then just make sure that the number of output classes is set to 7 and 5 for the Herlev and SiPakMed respectively. The variables "current_classes_of_dataset" and "output_classes_of_next_dataset" need to be set to 7 and 5 respectively. It's very important to set appropriately the number of outputs corresponding to each of your datasets, to avoid any size mismatch in the output softmax layers when loading weights and architecture from one model to another.
+6. Then just make sure that the number of output classes is set to 7 and 5 for the Herlev and SiPakMed respectively. The variables "current_classes_of_dataset" and "output_classes_of_next_dataset" need to be set to 7 and 5 respectively. It's very important to set appropriately the number of outputs corresponding to each of your datasets, to avoid any size mismatch in the output softmax layers when loading weights and architecture from one model to another
 
 7. Execute the "R50Herlev.py" after setting appropriate hyperparameters. The final output model will saved under the path specified by "save_loc" variable in the "LoadWeights.py" file. Both files are needed to succesfully execute R50herlev.py" file
 
@@ -106,13 +106,13 @@ In contrast to the previously mentioned approaches, the following models were co
 
 2. Specify the path to the SiPakMed(Formatted) dataset directory in all python files except ""K_REPORT_MODELS.py"
 
-3. Train the 'Intermediate Layer classification models' based on R50 and VGG16 respectively by running "K_REPORT_MAIN_R50.py" and "K_REPORT_MAIN_VGG.py" respectively. Both files will save the model weights post training as K_R50_T2.h5 and K_VGG_T2.h5 respectively, and output the model performances on the test set.
+3. Train the 'Intermediate Layer classification models' based on R50 and VGG16 respectively by running "K_REPORT_MAIN_R50.py" and "K_REPORT_MAIN_VGG.py" respectively. Both files will save the model weights post training as K_R50_T2.h5 and K_VGG_T2.h5 respectively, and output the model performances on the test set
 
 4. Finally, the features extracted features from models M1("Intermediated Layer Classification based on R50") and M2("Intermediate Layer Classification based on VGG16") are combined into a new model and trained by exectuting the "K_REPORT_MAIN_COMB.py".The final model trained with "K_REPORT_MAIN_COMB.py" is depicted in the right corner of the figure below.<table style="border:0px">
    <tr>
        <td><img src="pics/FeatureCombination.jpg" frame=void rules=none></td>
    </tr>
-</table>Executing "K_REPORT_MAIN_COMB.py" will output accuracy, confusion matrix and classwise precision and recall values for the final model. Selecting a good seed on line 105 based on validation performance, may be necessary to reach optimal performance.
+</table>Executing "K_REPORT_MAIN_COMB.py" will output accuracy, confusion matrix and classwise precision and recall values for the final model. Selecting a good seed on line 105 based on validation performance, may be necessary to reach optimal performance
 
 
 
@@ -126,7 +126,7 @@ The model with the highest accuracy was obtained by implementing the TTL method.
 </table>
 
 
-The framework's outstanding performance on the SiPakMed, makes it one of the state-of-the-art frameworks of each field. The unprecedented accuacy achieved can be further improved, by combining TTL with the Feature Combination method or for specially training specific weaker categories through SVMs. Soon more to come!
+The framework's outstanding performance on the SiPakMed, makes it one of the state-of-the-art frameworks of each field. The unprecedented accuacy achieved can be further improved, by combining TTL with the Feature Combination method or for specially training specific weaker categories (e.g Koilocytotic) through SVMs. Soon more to come!
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) 
 **In general all python files are detailed with many descriptive and helpful comments that will guide you to any step described in the above procedures**  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) 
