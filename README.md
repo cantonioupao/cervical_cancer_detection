@@ -51,7 +51,7 @@ As a result, this project focuses on a 5 classes categorical classification base
   ```
 3. Install the fastai library and all its dependencies, as well as the torch library.
 
-4. To train the Resnet50 pretrained network on the Sipakmed dataset use the "R50.py". Initially specificy in the file, the path to the sipakmed (Formatted) dataset---->"path_folder". Then choose appropriate hyperparameters (Epoch = 50 , Batch = 10 , Learning rate = 0.001) and start training.
+4. To train the Resnet50 pretrained network on the Sipakmed dataset use the "R50.py". Initially specificy in the file, the path to the sipakmed (Formatted) dataset---->"path_folder". Then choose appropriate hyperparameters (Epoch = 50 , Batch = 10 , Learning rate = 0.01) and start training.
 
 5. After training is completed the model weights are saved and the whole model is exported.You can specify beforehand in the "R50.py", the path to the storage location to which you want the model weights(.pth) and the whole model(.pkl) to be saved
 
