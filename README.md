@@ -96,7 +96,7 @@ consisting of 916 images of single cells. Because there are more classes to be c
 
 6. Execute the "R50Herlev.py" after setting appropriate hyperparameters. The final output model will saved under the path specified by "save_loc" in the "TTLR50.py" file. All 3 files are needed to succesfully run the "R50Herleve.py" file
 
-7.After training is completed, the model is saved(.pth) and exported(.pkl).Once again the model can be loaded to the learner of the inference file for better interpration and analysis of the results. The inference file prints the accuracy, precision, recall values along with the confusion matrix for the 5 categories
+7. After training is completed, the model is saved(.pth) and exported(.pkl).Once again the model can be loaded to the learner of the inference file for better interpration and analysis of the results. The inference file prints the accuracy, precision, recall values along with the confusion matrix for the 5 categories
 
 
 ## Best framework
