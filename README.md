@@ -71,7 +71,7 @@ The main procedure for training a Resnet50 model on the Sipakmed dataset is desc
 
 1. For applying data augmentation to the sipakmed dataset, the "implementation_DataAugmentation_Extension.py" file is executed. Specify in the file the target directory path of the sipakmed dataset (or any other dataset you want to apply data augmentation). set the path of the directory through the variable ---> "target_directory"
 
-2. After executing the file, 14 new augmented images will be generated for each image of the Sipakmed dataset. The data augmentations carried out include affine transformations,filter response, color channels tweaking and etc.The generated images are saved automatically in the same location with the original image. As a result the dataset size increases by a factor of 14, assisting with obtaining better results.
+2. After executing the file "implementation_DataAugmentation_Extension.py", 14 new augmented images will be generated for each image of the Sipakmed dataset. The data augmentations carried out include affine transformations,filter response, color channels tweaking and etc.The generated images are saved automatically in the same location with the original image. As a result the dataset size increases by a factor of 14, assisting with obtaining better results.
 
 **Triple Transfer Learning**
 TTL(Trisple Transfer Learning) means that the mode was trained on the 3 datasets in total. Initially the model is trained on the Extended DA dataset, which is the formatted sipakmed dataset after data augmentation has been carried out (procedure described in the above section). After training of the model is completed, the new weigths are saved in a .pth file. Afterwards the model is trained on the [Herlev dataset](https://www.researchgate.net/publication/326477913_Clustering_Techniques_on_Pap-smear_Images_for_the_Detection_of_Cervical_Cancer) which is a cervical cell dataset with 7 classification classes; 
@@ -94,7 +94,7 @@ consisting of 916 images of single cells. Because there are more classes to be c
 
 5. Then just make sure that the number of output classes is set to 7 and 5 for the Herlev and Sipakmed respectively. The variables "current_classes_of_dataset" and "output_classes_of_next_dataset" need to be set to 7 and 5 respectively. It's very important to set appropriately the number of outputs corresponding to each of your datasets, to avoid any size mismatch in the output softmax layers when loading weights and architecture from one model to another.
 
-6. Execute the "R50Herlev.py" after setting appropriate hyperparameters. The final output model will saved under the path specified by "save_loc" in the "TTLR50.py" file. All 3 files are needed to succesfully run the "R50Herleve.py" file
+6. Execute the "R50Herlev.py" after setting appropriate hyperparameters. The final output model will saved under the path specified by "save_loc" variable in the "LoadWeights.py" file. Both files are needed to succesfully execute R50herlev.py" file
 
 7. After training is completed, the model is saved(.pth) and exported(.pkl).Once again the model can be loaded to the learner of the inference file for better interpration and analysis of the results. The inference file prints the accuracy, precision, recall values along with the confusion matrix for the 5 categories
 
