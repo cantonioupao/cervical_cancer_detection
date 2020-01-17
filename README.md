@@ -88,9 +88,20 @@ consisting of 916 images of single cells. Because there are more classes to be c
 
 4. The path of the model weights from training on the Extended DA dataset needs to be specified. Training on Extended DA and saving the weights is no different that training on the Sipakmed(Formatted). With the aid of "R50.py" the model is trained on the Extended DA. Remember that if you want to train on the Extended DA, just change the "path_folder" variable and specify the path to the Extnded DA this time. Then choose the location at which the model weights will be saved (after training on the Extended DA). Now the path to the weights's location you chose when training before, will be the path that needs to be specified in the "R50Herlev.py"
 
-5. Then just make sure that the number of output classes is set to 7 and 5 for the Herlev and Sipakmed respectively. The 
+5. Then just make sure that the number of output classes is set to 7 and 5 for the Herlev and Sipakmed respectively. The variables "current_classes_of_dataset" and "output_classes_of_next_dataset" need to be set to 7 and 5 respectively. It's very important to set appropriately the number of outputs corresponding to each of your datasets, to avoid any size mismatch in the output softmax layers when loading weights and architecture from one model to another.
+
+6. Execute the "R50Herlev.py" after setting appropriate hyperparameters. The final output model will saved under the path specified by "save_loc" in the "TTLR50.py" file. All 3 files are needed to succesfully run the "R50Herleve.py" file
+
+7.After training is completed, the model is saved(.pth) and exported(.pkl).Once again the model can be loaded to the learner of the inference file for better interpration and analysis of the results. The inference file prints the accuracy, precision, recall values along with the confusion matrix for the 5 categories
+
 
 ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) 
 **In general all python files are detailed with many descriptive and helpful comments that will guide you to any step described in the above procedures**  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) 
+
+
+## Best framework
+The model with the highest accuracy was obtained by implementing the TTL method. The best performing framework yielded outstanding results with very high accuracy,recall and precision vallues. The confusion matrix obtained with the aid of the inference file is shown below. The framework's outstanding performance on the Sipakmed, makes it one of the state-of-the-art frameworks of each field. The unprecedented accuacy achieved can be further improved, by combining TTL with the Feature Combination method. Soon more to come!
+
+
  
 
