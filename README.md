@@ -57,7 +57,13 @@ As a result, this project focuses on a 5 classes categorical classification base
 
 6. In case you have trained your model up to a certain checkpoint and you save it, you can reload the model weigths by specifying path to the model weights file(.pth)  ---> "model_path" variable in "R50.py"
 
-7. After completing a simple training of the Sipakmed (Formatted) dataset, the results can be further analyzed with the aid of an inference file "Inference_FastAI.py". The inference file will load the model pickle file (.pkl) and will perform classification on any given dataset. It will predict any sample cell microscopic image. The inference file, is set up to evaluate the performance of the model on the testing dataset from the Sipakmed. However it can be carried out on any set of images or single image.The user needs to specify the "test_dataset_path" and the "model_path" with paths to where the testset and the model file are respectively. The inference file will output the accuracy, recall,precision values and the confusion matrix for the various cell categories.
+7. After completing a simple training of the Sipakmed (Formatted) dataset, the results can be further analyzed with the aid of an inference file "Inference_FastAI.py". The inference file will load the model pickle file (.pkl) and will perform classification on any given dataset. It will predict any sample cell microscopic image. The inference file, is set up to evaluate the performance of the model on the testing dataset from the Sipakmed. However it can be carried out on any set of images or single image.The user needs to specify the "test_dataset_path" and the "model_path" with paths to where the testset and the model file are respectively. The following screenshot shows the output from an inference file.
+<table style="border:0px">
+   <tr>
+       <td><img src="screenshotTTLinference.jpg" frame=void rules=none></td>
+   </tr>
+</table>
+The inference file will output the accuracy, recall,precision values and the confusion matrix for the various cell categories. The inference file can be implemented on the vallidation set as well, by changing "test_dataset_path = path_folder/'test'" to test_dataset_path = path_folder/'val'  
 
 ## Further training
 
@@ -100,7 +106,17 @@ consisting of 916 images of single cells. Because there are more classes to be c
 
 
 ## Best framework
-The model with the highest accuracy was obtained by implementing the TTL method. The best performing framework yielded outstanding results with very high accuracy,recall and precision vallues. The confusion matrix obtained with the aid of the inference file is shown below. The framework's outstanding performance on the Sipakmed, makes it one of the state-of-the-art frameworks of each field. The unprecedented accuacy achieved can be further improved, by combining TTL with the Feature Combination method. Soon more to come!
+The model with the highest accuracy was obtained by implementing the TTL method. The best performing framework yielded outstanding results with very high accuracy,recall and precision vallues. The confusion matrix obtained with the aid of the inference file is shown below for inference on both the testing and validation set.
+<table style="border:0px">
+   <tr>
+       <td><img src="ConfusionMatrixofTestingDatasetSipakmed.jpg" frame=void rules=none></td>
+       <td><img src="ConfusionMatrixofValidationDatasetSipakmed.jpg" frame=void rules=none></td>
+   </tr>
+</table>
+
+
+The framework's outstanding performance on the Sipakmed, makes it one of the state-of-the-art frameworks of each field. The unprecedented accuacy achieved can be further improved, by combining TTL with the Feature Combination method or for specially training specific weaker categories through SVMs. Soon more to come!
+
 
 
  
