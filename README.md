@@ -1,4 +1,4 @@
-# Cervical Cancer Detection from PAP-Test(smear) results using DL
+# Deep Cervical Cancer: Cervical Cancer Classification using Deep Learning
 ### Overview 
 A Deep learning framework for cervical cancer classification on the Sipakmed dataset, to allow improved accuracy for PAP smear test evaluation and cancer prognosis 
 <table style="border:0px">
