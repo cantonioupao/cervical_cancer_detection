@@ -103,8 +103,8 @@ consisting of 916 images of single cells. Because there are more classes to be c
 The model with the highest accuracy was obtained by implementing the TTL method. The best performing framework yielded outstanding results with very high accuracy,recall and precision vallues. The confusion matrix obtained with the aid of the inference file is shown below for inference on both the testing and validation set.
 <table style="border:0px">
    <tr>
-       <td><img src="ConfusionMatrixofTestingDatasetSipakmed.jpg" frame=void rules=none></td>
-       <td><img src="ConfusionMatrixofValidationDatasetSipakmed.jpg" frame=void rules=none></td>
+       <td><img src="ConfusionMatrixForTestingDatasetSipakmed.jpg" frame=void rules=none></td>
+       <td><img src="ConfusionMatrixForValidationDatasetSipakmed.jpg" frame=void rules=none></td>
    </tr>
 </table>
 
