@@ -99,10 +99,6 @@ consisting of 916 images of single cells. Because there are more classes to be c
 7.After training is completed, the model is saved(.pth) and exported(.pkl).Once again the model can be loaded to the learner of the inference file for better interpration and analysis of the results. The inference file prints the accuracy, precision, recall values along with the confusion matrix for the 5 categories
 
 
-![#f03c15](https://placehold.it/15/f03c15/000000?text=+) 
-**In general all python files are detailed with many descriptive and helpful comments that will guide you to any step described in the above procedures**  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) 
-
-
 ## Best framework
 The model with the highest accuracy was obtained by implementing the TTL method. The best performing framework yielded outstanding results with very high accuracy,recall and precision vallues. The confusion matrix obtained with the aid of the inference file is shown below for inference on both the testing and validation set.
 <table style="border:0px">
@@ -114,6 +110,9 @@ The model with the highest accuracy was obtained by implementing the TTL method.
 
 
 The framework's outstanding performance on the Sipakmed, makes it one of the state-of-the-art frameworks of each field. The unprecedented accuacy achieved can be further improved, by combining TTL with the Feature Combination method or for specially training specific weaker categories through SVMs. Soon more to come!
+
+![#f03c15](https://placehold.it/15/f03c15/000000?text=+) 
+**In general all python files are detailed with many descriptive and helpful comments that will guide you to any step described in the above procedures**  ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) 
 
 
 
