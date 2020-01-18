@@ -62,7 +62,7 @@ e) Superficial-Intermediate. Overall, this project focuses on a 5 class categori
    </tr>
 </table>The inference file will output the accuracy, recall, precision values and the confusion matrix for the various cell categories. The inference file can be implemented on the vallidation set as well, by changing " test_dataset_path = path_folder/'test' " to  " test_dataset_path = path_folder/'val' "  
 
-## Further training
+### Further training
 
 The main procedure for training a ResNet50 model on the SIPakMed dataset is described above. Nevertheless for improving results, usually further training is required and hence the methods of data augmentation (DA) , triple transfer learning (TTL) and feature combination are used and described below.
 
@@ -97,11 +97,11 @@ consisting of 916 images of single cells. Because there are more classes to be c
 
 7. Execute the "R50Herlev.py" after setting appropriate hyperparameters. The final output model will be saved under the path specified by "save_loc" variable in the "LoadWeights.py" file. Both files ("R50Herlev.py", "LoadWeights.py") are needed to succesfully execute R50Herlev.py" file
 
-8. After training is completed, the model is saved(.pth) and exported(.pkl).Once again the model can be loaded to the learner of the inference file for better interpretation and analysis of the results. The inference file prints the accuracy, precision, recall values along with the confusion matrix for the 5 categories
+8. After training is completed, the model is saved(.pth) and exported(.pkl). Once again the model can be loaded to the learner of the inference file for better interpretation and analysis of the results. The inference file prints the accuracy, precision, recall values along with the confusion matrix for the 5 categories
 
 
 **Feature Combination**
-In contrast to the previously mentioned approaches, the following models were coded in Keras. Furthermore the "sklearn" package for performance reports, and "numpy" for various purposes are required. All lbraries and packages need to be downloaded and installed in the system before training. For carrying out the feature combination method, 4 files are required and need to be executed: "K_REPORT_MODELS.py", "K_REPORT_MAIN_R50.py", "K_REPORT_MAIN_VGG.py", "K_REPORT_MAIN_COMB.py". In order to succesfully run the models and obtain the final predictions the following steps are required:
+In contrast to the previously mentioned approaches, the following models were coded in Keras. Furthermore the "sklearn" package for performance reports, and "numpy" for various purposes are required. All libraries and packages need to be downloaded and installed in the system before training. For carrying out the feature combination method, 4 files are required and need to be executed: "K_REPORT_MODELS.py", "K_REPORT_MAIN_R50.py", "K_REPORT_MAIN_VGG.py", "K_REPORT_MAIN_COMB.py". In order to succesfully run the models and obtain the final predictions the following steps are required:
 1. Make sure that all 4 files (mentioned above) are located in the same folder or directory
 
 2. Specify the path to the SIPakMed (Formatted) dataset directory in all python files except ""K_REPORT_MODELS.py"
@@ -116,8 +116,8 @@ In contrast to the previously mentioned approaches, the following models were co
 
 
 
-## Best framework
-The model with the highest accuracy was obtained by implementing the TTL method. The best performing framework yielded outstanding results with very high accuracy, recall and precision vallues. The confusion matrix obtained with the aid of the inference file is shown below for inference on both the testing and validation set.
+### Best framework
+The model with the highest accuracy was obtained by implementing the TTL method. The best performing framework yielded outstanding results with very high accuracy, recall and precision vallues. The confusion matrix obtained with the aid of the inference file, is shown below for inference on both the testing and validation set.
 <table style="border:0px">
    <tr>
        <td><img src="pics/ConfusionMatrixForTestingDatasetSipakmed.jpg" frame=void rules=none></td>
